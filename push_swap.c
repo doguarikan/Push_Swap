@@ -12,6 +12,25 @@
 
 #include "push_swap.h"
 
+void	str_checker(const char *str)
+{
+	size_t	i;
+	size_t	j;
+
+	j = 0;
+	i = 0;
+	while (str[j])
+	{
+		if (str[j] == ' ')
+		{
+			i++;
+		}
+		j++;
+	}
+	if (j == i)
+		exit(0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	**a_stack;
@@ -19,7 +38,6 @@ int	main(int argc, char **argv)
 	int		len;
 	int		s_or_not;
 
-	s_or_not = 0;
 	if (argc < 2)
 		return (0);
 	a_stack = (t_stack **)malloc(sizeof(t_stack *));
@@ -27,10 +45,10 @@ int	main(int argc, char **argv)
 	*a_stack = NULL;
 	*b_stack = NULL;
 	new_stack(a_stack, argv);
-	neg_setter(a_stack);
 	s_or_not = is_sorted(a_stack);
 	if (s_or_not)
 		return (0);
+	neg_setter(a_stack);
 	len = stack_len(a_stack);
 	sort_select(a_stack, b_stack, len);
 	return (0);

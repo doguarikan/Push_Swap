@@ -39,10 +39,12 @@ int		stack_len(t_stack **a_stack);
 int		is_sorted(t_stack **a_stack);
 
 void	sort_select(t_stack **a_stack, t_stack **b_stack, int len);
-void	triple_sort(t_stack **a_stack, t_stack **b_stack);
+void	triple_sort(t_stack **a_stack);
 void	quadruple_sort(t_stack **a_stack, t_stack **b_stack);
+void	quintuple_sort(t_stack **a_stack, t_stack **b_stack);
 void	error_handle(t_stack **stack);
 int		find_min(t_stack **a_stack);
+void	queue_setter(t_stack **a_stack);
 
 void	binary_radix(t_stack **a_stack, t_stack **b_stack);
 

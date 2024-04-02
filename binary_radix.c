@@ -23,7 +23,7 @@ t_stack *find_another_min(t_stack **a_stack)
 	min = NULL;
 	while (temp)
 	{
-		if ((temp->data < min->data || !work) && (temp->queue_num == -1))
+		if ((!work || temp->data < min->data) && (temp->queue_num == -1))
 		{
 			work = 1;
 			min = temp;
@@ -50,8 +50,8 @@ void	queue_setter(t_stack **a_stack)
 
 void	binary_radix(t_stack **a_stack, t_stack **b_stack)
 {
-	int push;
-	int len;
+	int	push;
+	int	len;
 
 	push = 0;
 	queue_setter(a_stack);

@@ -14,9 +14,11 @@
 
 void reverse_rot(t_stack **stack)
 {
-	t_stack *newfirst;
-	t_stack *newlast;
-//!!
+	t_stack	*newfirst;
+	t_stack	*newlast;
+
+	if (ft_lstsize(*stack) < 2)
+		return ;
 	newfirst = ft_lstlast(*stack); 
 	newlast = *stack;
 	while(newlast->next->next)
@@ -38,9 +40,10 @@ void rrb(t_stack **b_stack)
 	write(1, "rrb\n", 4);
 }
 
-void rrr(t_stack **a_stack,t_stack **b_stack)
+void rrr(t_stack **a_stack, t_stack **b_stack)
 {
-	//!!
+	if (ft_lstsize(*a_stack) < 2 && ft_lstsize(*b_stack) < 2)
+		return ;
 	reverse_rot(a_stack);
 	reverse_rot(b_stack);
 	write(1, "rrr\n", 4);

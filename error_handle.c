@@ -1,19 +1,22 @@
 #include "push_swap.h"
 
+void	st_error()
+{
+	write(2, "Error\n", 6);
+	exit(0);
+}
+
 void	error_handle(t_stack **stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
-	while((*stack)->next)
+	while ((*stack)->next)
 	{
 		temp = (*stack)->next;
-		while(temp)
+		while (temp)
 		{
-			if((*stack)->data == temp->data)
-			{
-				ft_putstr_fd("error!",1);
-				exit(1); // terminate program execution
-			}
+			if ((*stack)->data == temp->data)
+				st_error();
 			temp = temp->next;
 		}
 		stack = &(*stack)->next;

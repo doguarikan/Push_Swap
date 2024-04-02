@@ -14,9 +14,9 @@
 
 void	split_nodes(t_stack **a_stack, char *argv)
 {
-	int i;
-	char **splitted;
-	t_stack *new_node;
+	int 	i;
+	char 	**splitted;
+	t_stack	*new_node;
 	
 	i = 0;
 	splitted = ft_split(argv, ' ');
@@ -35,17 +35,20 @@ void	split_nodes(t_stack **a_stack, char *argv)
 void	new_stack(t_stack **a_stack, char **argv)
 {
 	t_stack *new_node;
-	int i;
+	int 	i;
 	
 	i = 1;
-	while(argv[i])
+	while (argv[i])
 	{
-		if(ft_strrchr(argv[i],' ')!= NULL)
-			split_nodes(a_stack,argv[i]);
+		if (ft_strrchr(argv[i], ' ') != NULL)
+		{
+			str_checker(argv[i]);
+			split_nodes(a_stack, argv[i]);
+		}
 		else
 		{
 			new_node = ft_lstnew(ft_atoi(argv[i]));
-			ft_lstadd_back(a_stack,new_node);
+			ft_lstadd_back(a_stack, new_node);
 		}
 		i++;
 	}
@@ -55,8 +58,8 @@ void	new_stack(t_stack **a_stack, char **argv)
 int	is_sorted(t_stack **a_stack)
 {
 	t_stack	*temp;
-	int i;
-	int len;
+	int		i;
+	int		len;
 
 	len = stack_len(a_stack);
 	i = 0;
@@ -67,7 +70,7 @@ int	is_sorted(t_stack **a_stack)
 			i++;
 		temp = temp->next;
 	}
-	if(i == len-1)
+	if (i == len-1)
 		return (1);
 	return (0);
 }

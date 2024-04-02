@@ -17,7 +17,8 @@ void rotate(t_stack **stack)
 	t_stack *start;
 	t_stack *end;
 
-	//!!
+	if (ft_lstsize(*stack) < 2)
+		return ;
 	start = *stack;
 	end = ft_lstlast(*stack);
 	*stack = (*stack)->next;
@@ -39,7 +40,8 @@ void rb(t_stack **b_stack)
 
 void rr(t_stack **a_stack, t_stack **b_stack)
 {
-	//!!
+	if ((ft_lstsize(*a_stack) < 2) || (ft_lstsize(*b_stack) < 2))
+		return ;
 	rotate(a_stack);
 	rotate(b_stack);
 	write(1, "rr\n", 3);
