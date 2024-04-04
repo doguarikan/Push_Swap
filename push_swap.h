@@ -45,6 +45,7 @@ void	quintuple_sort(t_stack **a_stack, t_stack **b_stack);
 void	error_handle(t_stack **stack);
 int		find_min(t_stack **a_stack);
 void	queue_setter(t_stack **a_stack);
+void	str_checker(const char *str);
 
 void	binary_radix(t_stack **a_stack, t_stack **b_stack);
 
