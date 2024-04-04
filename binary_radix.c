@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_stack *find_another_min(t_stack **a_stack)
+t_stack	*find_another_min(t_stack **a_stack)
 {
 	t_stack	*temp;
 	t_stack	*min;

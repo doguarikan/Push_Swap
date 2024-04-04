@@ -23,13 +23,13 @@ void	push(t_stack **source, t_stack **dest)
 	ft_lstadd_front(dest, temp);
 }
 
-void pa(t_stack **dest_a, t_stack **src_b)
+void	pa(t_stack **dest_a, t_stack **src_b)
 {
 	push(src_b, dest_a);
 	write(1,"pa\n",3);
 }
 
-void pb(t_stack **dest_b, t_stack **src_a)
+void	pb(t_stack **dest_b, t_stack **src_a)
 {
 	push(src_a, dest_b);
 	write(1,"pb\n",3);
