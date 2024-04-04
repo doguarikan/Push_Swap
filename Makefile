@@ -1,22 +1,29 @@
 NAME = push_swap
 
-SRCS = $(wildcard *.c libft/*.c)
+SRCS = binary_radix.c error_handle.c push_swap.c operations.c \
+       operations2.c operations3.c operations4.c sort.c stack_prep.c
 
 OBJS = $(SRCS:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g  -Iinc
 
-all: $(NAME) 
+RM = rm -rf
+
+CFLAGS = -Wall -Wextra -Werror
+
+all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC)  $(OBJS) $(CFLAGS) -o $(NAME)
+	@$(MAKE) -C ./libft
+	@$(CC) $(CFLAGS) $(OBJS) ./libft/libft.a -o $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	make clean -C libft
+	@$(RM) *.o
 
 fclean: clean
-	@rm -f $(NAME)
+	make fclean -C libft
+	@$(RM) $(NAME)
 
 re: fclean all
 
