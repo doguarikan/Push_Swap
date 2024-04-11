@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h" // libft mi bu nu
+#include "../push_swap.h"
 
 void	atoi_error()
 {
@@ -18,7 +18,7 @@ void	atoi_error()
 	exit(0);
 }
 
-int	ft_atoi(const char *str) //error unutma over int
+int	ft_atoi(const char *str)
 {
 	int			i;
 	int			sign;
